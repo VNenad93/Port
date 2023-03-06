@@ -12,11 +12,20 @@ list.forEach((item) => {
 
 tooltips.forEach((tooltip) => {
   tooltip.previousElementSibling.addEventListener("click", () => {
-    // remove the "show" class from all the tooltips
     tooltips.forEach((t) => {
-      t.style.opacity = 0;
+      t.style.visibility = "hidden";
     });
-    // toggle the "show" class on the clicked button's tooltip
-    tooltip.style.opacity = 1;
+    tooltip.style.visibility = "visible";
+  });
+});
+
+const items = document.querySelectorAll(".item");
+const info = document.querySelector(".info");
+const grid = document.querySelector(".items");
+
+items.forEach((item) => {
+  item.addEventListener("click", () => {
+    info.style.display = "block";
+    grid.classList.add("slide-out")
   });
 });
