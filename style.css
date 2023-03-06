@@ -66,7 +66,7 @@ nav {
   border-radius: 0.5rem;
   width: 80%;
   position: fixed;
-  bottom: 5%;
+  bottom: 3%;
   left: 0;
   right: 0;
   margin: auto;
@@ -139,7 +139,7 @@ textarea {
   padding: 0.5rem;
   margin: 0.5rem 0;
   transition: all 0.25s ease-in-out;
-  text-indent: .5rem;
+  text-indent: 0.5rem;
 }
 
 input {
@@ -148,7 +148,7 @@ input {
   padding: 0.5rem;
   margin: 0.5rem 0;
   transition: all 0.25s ease-in-out;
-  text-indent: .5rem;
+  text-indent: 0.5rem;
 }
 
 input:focus,
@@ -158,7 +158,8 @@ textarea:focus {
   transform: translate(2px, -2px);
 }
 
-input:focus::placeholder, textarea:focus::placeholder {
+input:focus::placeholder,
+textarea:focus::placeholder {
   color: transparent;
 }
 
@@ -226,13 +227,13 @@ h1 span {
   padding: 1rem;
   background-color: antiquewhite;
   text-align: center;
-  gap: .5rem;
+  gap: 0.5rem;
   grid-template-columns: 1fr 1fr;
 }
 
 .item {
   border: 1px solid black;
-  padding: .5rem;
+  padding: 0.5rem;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
 }
@@ -240,7 +241,7 @@ h1 span {
 .item:hover {
   transform: scale(1.05);
   box-shadow: -0.25rem 0.25rem rgba(0, 0, 0, 0.571), 0 0 black;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 #technologies .content {
@@ -249,36 +250,35 @@ h1 span {
   justify-content: center;
   align-items: center;
   border: tomato 2px solid;
-  gap: 2rem;
 }
 
 .info {
   border: black 2px solid;
-  height: 15rem;
   display: none;
+  margin-top: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   background-color: #f1f5f9;
   box-shadow: -0.25rem 0.25rem rgba(0, 0, 0, 0.571), 0 0 rgba(0, 0, 0, 0.514);
-  animation: slide-in 1000ms;
+  animation: slide-in 500ms;
 }
 
 @keyframes slide-in {
   from {
-    transform: translateY(-30%);
+    transform: translateY(-20%);
     opacity: 0;
   }
   to {
-    transform: translateX(0%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }
 
 @keyframes slide-out {
   from {
-    transform: translateY(-30%);
+    transform: translateY(20%);
   }
   to {
     transform: translateY(0%);
@@ -286,5 +286,28 @@ h1 span {
 }
 
 .slide-out {
-  animation: slide-out 1000ms;
+  animation: slide-out 500ms;
+}
+
+.one {
+  display: none;
+  padding: 0.5rem;
+}
+
+.item p {
+  display: none;
+}
+
+
+@keyframes opacity {
+  from {
+    transform: translateX(-30%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.op {
+  animation: opacity 500ms;
 }
