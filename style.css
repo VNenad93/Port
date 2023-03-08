@@ -5,7 +5,6 @@
   --midGray: #535151;
   --darkGray: #272626;
   --light: #d68b12;
-  --whiteGray: #d8d4d4;
 }
 
 * {
@@ -141,7 +140,6 @@ section {
   background-color: var(--midGray);
   margin: 0 auto;
   border-radius: 0.5rem;
-  background: var();
   box-shadow: -0.25rem 0.25rem rgba(0, 0, 0, 0.571), 0 0 rgba(0, 0, 0, 0.514);
 }
 
@@ -220,7 +218,7 @@ form button {
 }
 
 label {
-  color: var(--whiteGray);
+  color: var(--lightGray);
 }
 
 form button:hover {
@@ -372,10 +370,6 @@ h2 span {
   transition: all 0.15s ease-in-out;
 }
 
-h2 span:hover {
-  background-color: rgb(255, 198, 55);
-}
-
 h1 span {
   background-color: rgba(218, 165, 32, 0);
   padding: 0.5rem;
@@ -395,20 +389,13 @@ h1 span {
 
 .items {
   display: grid;
-  gap: 0.1rem;
   grid-template-columns: 1fr;
   width: 90vw;
   transition: all 0.15s ease-in-out;
 }
 
-.items:hover {
-  border: 1px solid black;
-  box-shadow: -0.25rem 0.25rem rgba(0, 0, 0, 0.571), 0 0 rgba(0, 0, 0, 0.514);
-  transform: translate(5px, -5px);
-}
-
 .item {
-  border-bottom: 1px solid var(--whiteGray);
+  border-bottom: 1px solid var(--lightGray);
   padding: 0.4rem;
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -447,12 +434,6 @@ h1 span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.techno {
-  font-size: 2.3rem;
-  text-align: center;
-  color: var(--lightGray);
 }
 
 @keyframes slide-left {
@@ -539,7 +520,7 @@ h1 span {
 }
 
 .project {
-  border-bottom: 1px solid var(--whiteGray);
+  border-bottom: 1px solid var(--lightGray);
   padding: 0.3rem 1rem;
 }
 
@@ -660,7 +641,6 @@ h1 span {
 
   .form {
     width: 60%;
-    height: 70vh;
   }
 }
 
@@ -698,21 +678,20 @@ h1 span {
 
   .signature {
     transform: rotate(-200deg);
-    bottom: 12rem;
-    left: 6rem;
+    bottom: 30%;
+    left: 13%;
   }
 
   .signature h5 {
-    transform: scale(-1) scale(1.5)
+    transform: scale(-1) scale(1.5);
   }
 
   /* Technologies */
 
-  #technologies .container{
+  #technologies .container {
     height: 100vh;
     width: 100%;
     margin: 0 auto;
-    border: 3px solid tomato;
   }
 
   .items {
@@ -720,7 +699,15 @@ h1 span {
     margin: 0 auto;
   }
 
-  /* projects */ 
+  .item {
+    padding: 1rem 0;
+  }
+
+  .item h3 {
+    font-size: 1.2rem;
+  }
+
+  /* projects */
 
   #projects .container {
     height: 100vh;
@@ -729,6 +716,29 @@ h1 span {
   .project-container {
     width: 80%;
     margin: 0 auto;
-    gap: 0;
+  }
+
+  .project {
+    padding: 1rem 0;
+  }
+
+  /* contact */
+
+  #contact .container {
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .signature {
+    transform: scale(1.8) rotate(-200deg);
+  }
+
+  #home .name {
+    font-size: 8rem;
+  }
+
+  #home p {
+    font-size: 1.5rem;
   }
 }

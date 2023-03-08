@@ -30,8 +30,6 @@ window.addEventListener('load', () => {
   tooltips[0].style.visibility = "visible";
 });
 
-console.log(imgs)
-
 let activeItem = null;
 let rotatedImg = null;
 
@@ -69,18 +67,23 @@ for (let i = 0; i < items.length; i++) {
   });
 }
 
+
 // :root {
-//   --lightGray: #d8d4d4;
-//   --darkGray: #656262;
-//   --midGray: #535151;
-//   --darkestGray: #272626;
-//   --light: #d68b12;
-//   --whiteGray: #d8d4d4;
+//   --lightGray: #d8d4d4;   FONT COLOR
+//   --midGray: #535151;    FORM AND NAVBAR COLOR
+//   --darkGray: #272626;   BACKGROUND COLOR
+//   --light: #d68b12;    BUTTON COLOR
 // }
 
 
+
+const svg = document.querySelectorAll('nav img');
 const root = document.documentElement;
 
+svg.forEach((item) => { 
+    item.style.filter = 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(184deg) brightness(98%) contrast(108%)'
+});
 
-// root.style.setProperty('--lightGray', '#272626');
-// root.style.setProperty('--darkGray', '#d8d4d4');
+root.style.setProperty('--lightGray', '#343a40');
+root.style.setProperty('--darkGray', '#edf6f9');
+root.style.setProperty('--midGray', '#adb5bd');
