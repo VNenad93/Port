@@ -602,14 +602,6 @@ h1 span {
 
   /* Technologies */
 
-  #technologies .container {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .item {
     padding: 0.4rem 0;
   }
@@ -683,6 +675,7 @@ h1 span {
     width: 6vw;
     margin: auto 0;
     top: 0;
+    bottom: 0;
     left: 5vw;
   }
 
@@ -719,10 +712,23 @@ h1 span {
     height: 100vh;
     width: 100%;
     margin: 0 auto;
+    border: 3px solid tomato;
   }
 
   .items {
     width: 80%;
     margin: 0 auto;
+  }
+
+  /* projects */ 
+
+  #projects .container {
+    height: 100vh;
+  }
+
+  .project-container {
+    width: 80%;
+    margin: 0 auto;
+    gap: 0;
   }
 }
