@@ -676,7 +676,6 @@ h1 span {
   section {
     width: 70vw;
     margin: 0 auto;
-    border: 3px solid tomato;
   }
 
   nav {
@@ -712,5 +711,18 @@ h1 span {
 
   .signature h5 {
     transform: scale(-1) scale(1.5)
+  }
+
+  /* Technologies */
+
+  #technologies .container{
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .items {
+    width: 80%;
+    margin: 0 auto;
   }
 }
