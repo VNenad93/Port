@@ -27,6 +27,7 @@ h1 {
 
 body {
   overflow: hidden;
+  background-color: var(--darkGray);
 }
 
 html {
@@ -107,7 +108,6 @@ nav {
 section {
   height: 100vh;
   width: 100vw;
-  background-color: var(--darkGray);
 }
 
 .active {
@@ -650,11 +650,15 @@ h1 span {
   /* contact */
 
   .text h1 {
-    font-size: 3rem;
+    font-size: 2.4rem;
+  }
+
+  .text {
+    padding: 0.5rem;
   }
 
   .text p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--lightGray);
   }
 
@@ -664,5 +668,49 @@ h1 span {
 
   .form {
     width: 60%;
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    width: 70vw;
+    margin: 0 auto;
+    border: 3px solid tomato;
+  }
+
+  nav {
+    height: 40vh;
+    width: 6vw;
+    margin: auto 0;
+    top: 0;
+    left: 5vw;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+
+  #home .name {
+    font-size: 6rem;
+  }
+
+  #home .name::after {
+    bottom: 2rem;
+  }
+
+  #home p {
+    width: 80%;
+    line-height: 2.5rem;
+  }
+
+  .signature {
+    transform: rotate(-200deg);
+    bottom: 12rem;
+    left: 6rem;
+  }
+
+  .signature h5 {
+    transform: scale(-1) scale(1.5)
   }
 }
