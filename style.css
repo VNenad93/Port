@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400&display=swap");
 
 :root {
-  --darkGreen: #6b9080;
-  --lightGreen: #dbe6e0;
-  --mint: #cce3de;
-  --azure: #eaf4f4;
-  --cream: #f6fff8;
+  --lightGray: #d8d4d4;
+  --midGray: #535151;
+  --darkGray: #272626;
+  --light: #d68b12;
+  --whiteGray: #d8d4d4;
 }
 
 * {
@@ -27,7 +27,6 @@ h1 {
 
 body {
   overflow: hidden;
-  transition: all 0.5s;
 }
 
 html {
@@ -36,7 +35,7 @@ html {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--lightGray);
   text-transform: uppercase;
 }
 
@@ -55,13 +54,18 @@ li {
   transition: all 0.3s;
 }
 
+nav img {
+  filter: invert(100%) sepia(1%) saturate(7422%) hue-rotate(186deg)
+    brightness(121%) contrast(67%);
+}
+
 .tooltip {
   position: absolute;
   display: inline-block;
   bottom: 5%;
   left: 50%;
   transform: translate(-50%, 0);
-  color: black;
+  color: var(--lightGray);
   text-align: center;
   border-radius: 6px;
   padding: 5px;
@@ -83,12 +87,12 @@ nav {
   left: 0;
   right: 0;
   margin: auto;
-  background: rgba(255, 255, 255, 0.33);
+  background: var(--midGray);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.6px);
   -webkit-backdrop-filter: blur(9.6px);
-  animation: nav .7s ease-in-out;
+  animation: nav 0.7s ease-in-out;
 }
 
 @keyframes nav {
@@ -103,19 +107,19 @@ nav {
 section {
   height: 100vh;
   width: 100vw;
-  background-color: var(--lightGreen);
+  background-color: var(--darkGray);
 }
 
 .active {
   padding: 1rem;
   transform: scale(1.05);
   border-radius: 0.5rem;
-  border: 2px solid var(--darkGreen);
+  border: 2px solid var(--light);
   transition: all 0.15s ease-in-out;
-  background: rgba(255, 255, 255, 0.628);
+  background: var(--darkGray);
   border-radius: 16px;
-  backdrop-filter: blur(9.6px);
-  -webkit-backdrop-filter: blur(9.6px);
+  backdrop-filter: blur(60.6px);
+  -webkit-backdrop-filter: blur(60.6px);
 }
 
 .active img {
@@ -134,9 +138,10 @@ section {
 .form {
   padding: 1rem;
   width: 85%;
+  background-color: var(--midGray);
   margin: 0 auto;
   border-radius: 0.5rem;
-  background: white;
+  background: var();
   box-shadow: -0.25rem 0.25rem rgba(0, 0, 0, 0.571), 0 0 rgba(0, 0, 0, 0.514);
 }
 
@@ -167,7 +172,7 @@ textarea {
   margin: 0.5rem 0;
   transition: all 0.25s ease-in-out;
   text-indent: 0.5rem;
-  border: 1px solid var(--lightGreen);
+  border: 1px solid var(--darkGray);
 }
 
 input {
@@ -177,7 +182,7 @@ input {
   margin: 0.5rem 0;
   transition: all 0.25s ease-in-out;
   text-indent: 0.5rem;
-  border: 1px solid var(--lightGreen);
+  border: 1px solid var(--darkGray);
 }
 
 input:focus,
@@ -193,7 +198,7 @@ textarea:focus::placeholder {
 }
 
 form button {
-  background-color: var(--darkGreen);
+  background-color: var(--light);
   width: 60%;
   margin: 0.5rem 0 0.5rem auto;
   padding: 0.5rem;
@@ -207,12 +212,20 @@ form button {
   text-align: center;
   padding: 1rem;
   margin-bottom: 0.5rem;
+  color: var(--lightGray);
+}
+
+.text h1 {
+  font-size: 2.5rem;
+}
+
+label {
+  color: var(--whiteGray);
 }
 
 form button:hover {
   transform: translate(2px, -2px);
   box-shadow: -0.25rem 0.25rem rgba(0, 0, 0, 0.571), 0 0 black;
-  background-color: #84cc16;
 }
 
 #home .container {
@@ -251,16 +264,19 @@ form button:hover {
   bottom: 8rem;
   left: 4rem;
   transform: scale(1.4) rotate(20deg);
+  fill: var(--lightGray);
 }
 
 .signature h5 {
   animation: appear 3s ease;
+  color: var(--lightGray);
 }
 
 .text-home {
   text-align: left;
   padding: 1rem;
   margin-bottom: 0.5rem;
+  color: var(--lightGray);
 }
 
 .text-home h3 {
@@ -270,7 +286,7 @@ form button:hover {
 }
 
 .hello {
-  background-color: goldenrod;
+  background-color: var(--light);
   display: inline-block;
   font-size: 2rem;
   font-weight: 600;
@@ -281,11 +297,9 @@ form button:hover {
 
 @keyframes glow {
   from {
-    background-color: goldenrod;
     transform: scale(1.1);
   }
   to {
-    background-color: rgb(255, 198, 55);
   }
 }
 
@@ -301,10 +315,6 @@ form button:hover {
   margin-bottom: 0.5rem;
 }
 
-.hello:hover {
-  background-color: rgb(255, 198, 55);
-}
-
 .name {
   margin-top: 2rem;
   display: inline-block;
@@ -313,7 +323,7 @@ form button:hover {
   border-radius: 0.5rem;
   position: relative;
   z-index: 4;
-  letter-spacing: .4rem;
+  letter-spacing: 0.4rem;
 }
 
 .name::after {
@@ -322,8 +332,8 @@ form button:hover {
   position: absolute;
   width: 100%;
   height: 1rem;
-  background-color: goldenrod;
-  bottom: .9rem;
+  background-color: var(--light);
+  bottom: 0.9rem;
   z-index: -1;
   animation: stick 1s ease-in-out;
 }
@@ -349,7 +359,7 @@ h2 {
 }
 
 h2 span {
-  background-color: goldenrod;
+  background-color: var(--light);
   padding: 0.5rem;
   display: inline-block;
   border-radius: 0.5rem;
@@ -376,12 +386,6 @@ h1 span {
   font-weight: 300;
 }
 
-#home .container a:hover {
-  transform: translate(2px, -2px);
-  box-shadow: -0.25rem 0.25rem rgba(0, 0, 0, 0.571), 0 0 black;
-  background-color: rgb(255, 183, 0);
-}
-
 /* technologies */
 
 .items {
@@ -389,22 +393,23 @@ h1 span {
   gap: 0.3rem;
   grid-template-columns: 1fr;
   width: 90vw;
-  border: 1px solid black;
   padding: 1rem;
   margin: 1rem auto;
   transition: all 0.15s ease-in-out;
 }
 
 .items:hover {
+  border: 1px solid black;
   box-shadow: -0.25rem 0.25rem rgba(0, 0, 0, 0.571), 0 0 rgba(0, 0, 0, 0.514);
   transform: translate(5px, -5px);
 }
 
 .item {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--whiteGray);
   padding: 0.4rem;
   display: grid;
   grid-template-columns: 150px 1fr;
+  color: var(--lightGray);
 }
 
 @keyframes slide {
@@ -418,7 +423,7 @@ h1 span {
 }
 
 .skill {
-  background-color: #fae100;
+  background-color: var(--light);
   height: 100%;
   margin-right: auto;
   animation: slide 1s ease-in-out;
@@ -441,8 +446,8 @@ h1 span {
 .techno {
   font-size: 2.3rem;
   text-align: center;
+  color: var(--lightGray);
 }
-
 
 @keyframes slide-left {
   0% {
@@ -471,8 +476,8 @@ h1 span {
 .level {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 1px solid var(--light);
+  border-right: 1px solid var(--light);
   animation: level 1s ease-in-out;
 }
 
@@ -491,7 +496,7 @@ h1 span {
 
 .level div {
   padding: 0.5rem;
-  border-left: 1px solid black;
+  border-left: 1px solid var(--light);
   flex: 1;
 }
 
@@ -505,23 +510,31 @@ h1 span {
   align-items: center;
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--lightGray);
+}
+
 .info-text {
   display: flex;
-  align-items: baseline;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.info-text h3 {
+.info-text p {
   font-weight: 400;
+  font-size: 0.75rem;
 }
 
-.info-text h2 {
-  margin: 0;
+.info-text h4 {
+  font-size: 1.2rem;
 }
 
 .project {
-  border: 1px solid black;
-  padding: .3rem 1rem;
+  border-bottom: 1px solid var(--whiteGray);
+  padding: 0.3rem 1rem;
 }
 
 .project-container {
@@ -531,6 +544,125 @@ h1 span {
   gap: 1rem;
 }
 
+.information img {
+  transition: all 0.15s ease-in-out;
+  filter: invert(57%) sepia(99%) saturate(541%) hue-rotate(355deg) brightness(87%) contrast(91%);
+}
+
 .hidden {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.45s ease-in-out;
+  color: var(--lightGray);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons a {
+  margin-top: 0.5rem;
+  border: 1px solid var(--light);
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
+}
+
+@media  screen and (min-width: 768px) {
+
+  /* HomeContainer */
+
+  #home .container {
+    height: 70vh;
+    /* border: 3px solid tomato; */
+  }
+
+  #home h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  #home .name {
+    font-size: 4.5rem;
+  }
+
+  #home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #home p {
+    padding: 1rem;
+    width: 70%;
+    margin-left: auto;
+  }
+
+  /* Technologies */
+
+  #technologies .container {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item {
+    padding: .7rem 0;
+    font-size: 1.2rem;
+  }
+
+  /* projects */
+
+  .info-text {
+    gap: 2rem;
+  }
+
+  .info-text p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .info-text h4 {
+    font-size: 2rem;
+  }
+
+  .hidden p {
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 200;
+  }
+
+  .buttons {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .buttons a {
+    padding: 0.5rem 1rem;
+    border: 3px solid var(--light);
+    text-align: center;
+  }
+
+  /* contact */
+
+  .text h1 {
+    font-size: 3rem;
+  }
+
+  .text p {
+    font-size: 1.5rem;
+    color: var(--lightGray);
+  }
+
+  label {
+    font-size: 1.5rem;
+  }
+
+  .form {
+    width: 60%;
+  }
 }
