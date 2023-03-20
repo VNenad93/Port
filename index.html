@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vasiljev Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -60,9 +60,12 @@
             </svg>
           </div>
           <div class="text-home">
-            <div class="hello-text">
-              <h1 class="hello">Hello!</h1>
-              <h4>I'm</h4>
+            <div class="theme-flex">
+              <div class="hello-text">
+                <h1 class="hello">Hello!</h1>
+                <h4>I'm</h4>
+              </div>
+              <img src="/imgs/sun.svg" alt="" class="theme" />
             </div>
             <h1 class="name">VASILJEV</h1>
             <h2>Frontend <span>Developer</span></h2>
@@ -215,9 +218,7 @@
                   Git to resolve conflicts along the way.
                 </p>
                 <div class="buttons">
-                  <a href="https://pinteric.codefactory.live/" class="btn"
-                    >Project</a
-                  >
+                  <a href="https://cb-sandy.vercel.app/" class="btn">Project</a>
                 </div>
               </div>
             </div>
@@ -238,7 +239,9 @@
                   QuotesOnDesign API to get random quotes and display them.
                 </p>
                 <div class="buttons">
-                  <a href="api-quotes-dun.vercel.app" class="btn">Project</a>
+                  <a href="https://api-quotes-dun.vercel.app/" class="btn"
+                    >Project</a
+                  >
                   <a href="https://github.com/VNenad93/api--quotes" class="btn"
                     >Code</a
                   >
@@ -289,12 +292,22 @@
           </div>
           <form action="#">
             <label for="name">Your name</label>
-            <input type="text" id="name" placeholder="What is your name?" />
+            <input
+              type="text"
+              id="name"
+              placeholder="What is your name?"
+              required
+            />
             <label for="email">Your Email</label>
-            <input type="text" id="email" placeholder="What is your Email?" />
+            <input
+              type="email"
+              id="email"
+              placeholder="What is your Email?"
+              required
+            />
             <label for="area">Your Message</label>
             <textarea
-              id="area"
+              id="message"
               placeholder="What do you want to say?"
             ></textarea>
             <button>Submit</button>

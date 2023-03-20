@@ -19,6 +19,18 @@
   box-sizing: border-box;
 }
 
+.theme {
+  filter: invert(57%) sepia(99%) saturate(541%) hue-rotate(355deg)
+    brightness(87%) contrast(91%);
+  transition: all 0.3s;
+}
+
+.theme-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 h1 {
   margin: 0;
   padding: 0;
@@ -93,6 +105,7 @@ nav {
   backdrop-filter: blur(9.6px);
   -webkit-backdrop-filter: blur(9.6px);
   animation: nav 0.7s ease-in-out;
+  /* z-index: 999; */
 }
 
 @keyframes nav {
@@ -522,6 +535,7 @@ h1 span {
 .project {
   border-bottom: 1px solid var(--lightGray);
   padding: 0.3rem 1rem;
+  cursor: pointer;
 }
 
 .project-container {
@@ -546,14 +560,14 @@ h1 span {
 
 .buttons {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 }
 
 .buttons a {
-  margin-top: 0.5rem;
+  margin: .5rem 0;
   border: 1px solid var(--light);
-  padding: 0 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.3rem;
 }
 
@@ -609,7 +623,7 @@ h1 span {
   }
 
   .buttons {
-    width: 60%;
+    /* width: 60%; */
     margin: 0 auto;
     margin-bottom: 1rem;
   }

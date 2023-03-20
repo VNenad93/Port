@@ -30,6 +30,7 @@ window.addEventListener('load', () => {
   tooltips[0].style.visibility = "visible";
 });
 
+
 let activeItem = null;
 let rotatedImg = null;
 
@@ -68,22 +69,67 @@ for (let i = 0; i < items.length; i++) {
 }
 
 
-// :root {
-//   --lightGray: #d8d4d4;   FONT COLOR
-//   --midGray: #535151;    FORM AND NAVBAR COLOR
-//   --darkGray: #272626;   BACKGROUND COLOR
-//   --light: #d68b12;    BUTTON COLOR
-// }
-
-
-
 const svg = document.querySelectorAll('nav img');
 const root = document.documentElement;
+const theme = document.querySelector('.theme');
+const themeIcon = document.querySelector('#home img');
+const signature = document.querySelector('.signature');
 
-svg.forEach((item) => { 
-    item.style.filter = 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(184deg) brightness(98%) contrast(108%)'
+console.log(themeIcon);
+
+console.log(signature)
+
+
+let isDarkMode = false;
+
+theme.addEventListener('click', () => {
+  isDarkMode = !isDarkMode;
+
+  if (isDarkMode) {
+    svg.forEach((item) => {
+      item.style.filter = 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(184deg) brightness(98%) contrast(108%)'
+    });
+    root.style.setProperty('--lightGray', '#343a40');
+    root.style.setProperty('--midGray', '#adb5bd');
+    root.style.setProperty('--darkGray', '#edf6f9');
+    themeIcon.src = 'imgs/moon.svg';
+    themeIcon.style.filter = 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(184deg) brightness(98%) contrast(108%)';
+  } else {
+    svg.forEach((item) => {
+      item.style.filter = 'invert(100%) sepia(1%) saturate(7422%) hue-rotate(186deg) brightness(121%) contrast(67%)';
+    });
+    root.style.setProperty('--lightGray', '#d8d4d4');
+    root.style.setProperty('--midGray', '#535151');
+    root.style.setProperty('--darkGray', '#272626');
+    themeIcon.src = 'imgs/sun.svg';
+    themeIcon.style.filter = 'invert(57%) sepia(99%) saturate(541%) hue-rotate(355deg) brightness(87%) contrast(91%)';
+  }
 });
 
-root.style.setProperty('--lightGray', '#343a40');
-root.style.setProperty('--darkGray', '#edf6f9');
-root.style.setProperty('--midGray', '#adb5bd');
+console.log(document.querySelector('.form'));
+
+document.querySelector('.form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  let name = e.target.elements.name.value;
+  let email = e.target.elements.email.value;
+  let message = e.target.elements.message.value;
+  let param = `name=${name}&email=${email}&message=${message}`;
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://nenad.codefactory.live/email.php');
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      console.log(xhr.responseText);
+      e.target.reset();
+      alert('Email sent successfully!');
+    } else {
+      console.error(`Request failed. Returned status of ${xhr.status}`);
+      alert(`Request failed. Returned status of ${xhr.status}`);
+    }
+  };
+  xhr.onerror = () => {
+    console.error('There was an error sending the request.');
+    alert('There was an error sending the request.');
+  };
+  xhr.send(param);
+});
