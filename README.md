@@ -8,7 +8,7 @@ The home section contains an introduction to my website and what visitors can ex
 The skills section outlines my proficiency in various areas related to web development and design. It includes a list of my skills and a progress bar to indicate my level of expertise.
 
 ## Projects
-The projects section displays all of my completed projects. Each project includes a preview image and a button that links to the live site or repository. Visitors can also view the source code for each project by clicking on the Code button.
+The projects section displays all of my completed projects. Each project includes a button that links to the live site or repository. Visitors can also view the source code for each project by clicking on the Code button.
 
 ## Contact
 The contact section provides a form for visitors to get in touch with me. It includes fields for name, email, and message. Visitors can use this form to inquire about my services, provide feedback, or just say hello.
