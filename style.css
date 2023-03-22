@@ -558,6 +558,15 @@ h1 span {
   color: var(--lightGray);
 }
 
+.technologies svg {
+  height: 2rem;
+  fill: var(--lightGray);
+}
+
+.technologies {
+  margin-top: .5rem;
+}
+
 .buttons {
   display: flex;
   gap: 1rem;
