@@ -75,11 +75,6 @@ const theme = document.querySelector('.theme');
 const themeIcon = document.querySelector('#home img');
 const signature = document.querySelector('.signature');
 
-console.log(themeIcon);
-
-console.log(signature)
-
-
 let isDarkMode = false;
 
 theme.addEventListener('click', () => {
@@ -106,8 +101,6 @@ theme.addEventListener('click', () => {
   }
 });
 
-console.log(document.querySelector('.form'));
-
 document.querySelector('.form').addEventListener('submit', (e) => {
   e.preventDefault();
   let name = e.target.elements.name.value;
@@ -133,3 +126,27 @@ document.querySelector('.form').addEventListener('submit', (e) => {
   };
   xhr.send(param);
 });
+
+
+const arrow = document.getElementById('sendArrow')
+const btn = document.getElementById('sendBtn')
+const text = document.getElementById('ptag')
+
+
+btn.addEventListener('mouseover', () => {
+  arrow.style.display = 'block';
+  text.style.display = 'none';
+})
+
+btn.addEventListener('mouseout', () => {
+  arrow.style.display = 'none';
+  text.style.display = 'block';
+})
+
+btn.addEventListener('click', () => {
+  text.innerHTML = 'Thank you for your message!'
+
+  arrow.addEventListener('animationend', () => {
+    arrow.style.opacity = '0';
+  })
+})
