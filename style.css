@@ -227,7 +227,7 @@ form button {
 #sendArrow {
   height: 1.5rem;
   display: none;
-  animation: up .2s ease-in-out;
+  animation: up 0.2s ease-in-out;
 }
 
 #ptag {
@@ -236,7 +236,7 @@ form button {
 
 @keyframes appear {
   0% {
-    opacity: 0; 
+    opacity: 0;
   }
   100% {
     opacity: 1;
@@ -268,21 +268,20 @@ form button {
   }
   40% {
     transform: translateX(120%);
-    opacity: .8;
+    opacity: 0.8;
   }
   60% {
     transform: translateX(250%);
-    opacity: .6;
+    opacity: 0.6;
   }
   80% {
     transform: translateX(390%);
-    opacity: .4;
+    opacity: 0.4;
   }
   100% {
     transform: translateX(410%);
     opacity: 0;
   }
-
 }
 
 .text {
